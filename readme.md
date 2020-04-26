@@ -42,7 +42,7 @@ This tutorial uses HTML and CSS to create a full screen background image slider 
       <li></li>
     </ul>
 
-<% include partials/footer %>
+<%- include("partials/footer") -%>
 ```
 ### CSS
 - Create a new CSS file in `/public/stylesheets` named `landing.css`
