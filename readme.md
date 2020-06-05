@@ -42,7 +42,7 @@ This tutorial uses HTML and CSS to create a full screen background image slider 
       <li></li>
     </ul>
 
-<% include partials/footer %>
+<% include("partials/footer") %>
 ```
 ### CSS
 - Create a new CSS file in `/public/stylesheets` named `landing.css`
@@ -163,7 +163,7 @@ body {
 
 - The animation will be named imageAnimation, which matches with the value from our animation property in the .slideshow (unordered list) rule
 	- From 0% to 10% (the beginning of our animation) the list item begins changing it's opacity from 0 to 1 (invisible to visible)
-	- the animation-timing-function is set to ease-in at 0% and ease-out and 10%, this makes for a more smooth fade-in (read more about this [here](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function))
+	- the animation-timing-function is set to ease-in at 0% and ease-out at 10%, this makes for a more smooth fade-in (read more about this [here](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function))
 	- The list item's opacity then stays at 1 until it reaches 20% at which point it fades back out, reaching 0 at 30% and staying at 0 for the remainder of the animation
 	- If we have 5 background images visible for 5 seconds each, then the time it takes to fade the image in and keep it visible is 10 seconds with a 5 second crossfade/fadeout into the next image; The entire animation cycle for all 5 images takes 50 seconds total
 	- 100% divided by 5 is 20% so each image's fadein and visibility should last 20% of the cycle; half of 20% is 10%, that is why our fade in is from 0% to 10%, then we keep it visible until 20% is reached and begin the fadeout from 20% to 30%, the 5 second fadeout overlaps the next image's 5 second fadein, which is what creates the crossfade effect
